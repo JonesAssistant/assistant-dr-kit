@@ -1,0 +1,9 @@
+cd ~
+mkdir -p projects/assistant-dr-kit
+cd projects/assistant-dr-kit
+python -m venv .venv
+source .venv/bin/activate
+
+pip install typer[all]
+mkdir assistant_dr
+touch assistant_dr/__init__.py
