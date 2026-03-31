@@ -4,10 +4,10 @@
 # Adjust paths and lists to match your environment.
 
 # Root of your assistant's workspace
-workspace_root: /home/youruser/.openclaw/workspace
+workspace_root: /home/cortanaai/.openclaw/workspace
 
 # Where to write the DR bundle (will be created if it doesn't exist)
-bundle_output_path: /home/youruser/assistant-dr-bundles/latest
+bundle_output_path: /home/cortanaai/assistant-dr-bundles/test1
 
 # Individual files (relative to workspace_root) to include in the bundle
 include_files:
@@ -33,7 +33,7 @@ docs:
   - RIDE_THE_WAVE_PLAN.md
 
 # Optional paths for extra content
-packages_dir: /home/youruser/.openclaw/workspace/packages
-scripts_dir: /home/youruser/.openclaw/workspace/scripts
-models_dir: /home/youruser/.openclaw/workspace/models
-services_dir: /home/youruser/.openclaw/workspace/services
+packages_dir: /home/cortanaai/.openclaw/workspace/packages
+scripts_dir: /home/cortanaai/.openclaw/workspace/scripts
+models_dir: /home/cortanaai/.openclaw/workspace/models
+services_dir: /home/cortanaai/.openclaw/workspace/services

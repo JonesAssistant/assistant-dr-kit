@@ -2,6 +2,8 @@ from pathlib import Path
 
 import typer
 
+from .bundle_impl import build_bundle
+
 app = typer.Typer(help="assistant-dr-kit CLI - disaster recovery toolkit for local AI assistants")
 
 DEFAULT_CONFIG_NAME = "assistant-dr.yaml"
@@ -66,9 +68,16 @@ def init():
 
 
 @app.command()
-def bundle():
-    """Build a DR bundle from assistant-dr.yaml (not yet implemented)."""
-    typer.echo("'assistant-dr bundle' is not implemented yet. TODO: implement bundling logic.")
+def bundle(config: Path = Path(DEFAULT_CONFIG_NAME)):
+    """Build a DR bundle from assistant-dr.yaml."""
+
+    cfg_path = Path(config)
+    if not cfg_path.exists():
+        typer.echo(f"Config file '{cfg_path}' not found. Run 'assistant-dr init' first.")
+        raise typer.Exit(code=1)
+
+    bundle_root = build_bundle(cfg_path)
+    typer.echo(f"Bundle built at: {bundle_root}")
 
 
 @app.command()
